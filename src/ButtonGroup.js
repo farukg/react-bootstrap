@@ -46,9 +46,14 @@ class ButtonGroup extends React.Component {
       [prefix(Button.defaultProps, 'block')]: block,
     };
 
+    const domOnlyProps = ({
+      useAnchor,
+      ...domProps
+    }) => domProps
+
     return (
       <div
-        {...elementProps}
+        {...domOnlyProps(elementProps)}
         className={classNames(className, classes)}
       />
     );
